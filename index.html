@@ -4,42 +4,86 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LaShonda Graham | Benefits &amp; Operations</title>
-<meta name="description" content="LaShonda Graham: benefits, plan support, payer coordination, and operations improvement.">
+<meta name="description" content="LaShonda Graham: benefits support, carrier and payer coordination, case resolution, and process improvement.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#f7f8fa; --surface:#ffffff; --ink:#1b2430; --muted:#5b6675;
     --accent:#1f5e8c; --accent-soft:#e6eff6; --line:#e2e6eb;
+    --good:#2f7d4f; --good-soft:#e5f4e9; --warn:#a4620c; --warn-soft:#fbf0de; --bad:#a83a3a; --bad-soft:#fbe9e9;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px}
-  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
-  header{background:var(--accent);color:#fff;padding:64px 0 56px}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  header{background:var(--accent);color:#fff;padding:60px 0 52px}
   header h1{font-family:"Source Serif 4",Georgia,serif;font-size:clamp(2rem,5vw,2.8rem);line-height:1.15}
   header .role{font-size:1.1rem;opacity:.9;margin-top:8px}
-  header p.lead{max-width:640px;margin-top:20px;font-size:1.05rem;opacity:.95}
+  header p.lead{max-width:700px;margin-top:20px;font-size:1.05rem;opacity:.95}
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:28px}
+  .metric{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:14px 16px}
+  .metric b{display:block;font-size:1.5rem;line-height:1.2}
+  .metric span{font-size:.88rem;opacity:.9}
   .links{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
   .links a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.5);padding:8px 16px;border-radius:6px;font-weight:500;font-size:.95rem}
   .links a:hover{background:rgba(255,255,255,.12)}
-  section{padding:48px 0;border-bottom:1px solid var(--line)}
+  nav{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+  nav .wrap{display:flex;gap:20px;overflow-x:auto;padding-top:12px;padding-bottom:12px}
+  nav a{color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:500;white-space:nowrap}
+  nav a:hover{color:var(--accent)}
+  section{padding:48px 0;border-bottom:1px solid var(--line);scroll-margin-top:50px}
   section:last-of-type{border-bottom:none}
-  h2{font-family:"Source Serif 4",Georgia,serif;font-size:1.6rem;margin-bottom:20px;color:var(--ink)}
+  h2{font-family:"Source Serif 4",Georgia,serif;font-size:1.6rem;margin-bottom:8px}
+  .sub{color:var(--muted);margin-bottom:22px}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
   .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
   .card h3{font-size:1.05rem;margin-bottom:8px;color:var(--accent)}
   .card p{color:var(--muted);font-size:.95rem}
-  .case{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:24px;margin-bottom:16px}
-  .case h3{font-size:1.1rem;margin-bottom:4px}
-  .case .where{color:var(--muted);font-size:.9rem;margin-bottom:12px}
-  .case ul{padding-left:20px}
+  .case{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:26px;margin-bottom:18px}
+  .case h3{font-size:1.2rem;margin-bottom:4px}
+  .case .where{color:var(--muted);font-size:.9rem;margin-bottom:14px}
+  .case h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin:16px 0 6px}
+  .case ul,.case ol{padding-left:22px}
   .case li{margin-bottom:6px}
-  .stat{display:inline-block;background:var(--accent-soft);color:var(--accent);font-weight:600;padding:2px 8px;border-radius:4px}
+  .stat{display:inline-block;background:var(--accent-soft);color:var(--accent);font-weight:600;padding:1px 8px;border-radius:4px}
+  .tag{display:inline-block;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:2px 8px;margin-bottom:10px}
+  /* knowledge base sample */
+  .kb{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:22px}
+  .kb-head{background:#f0f3f6;padding:16px 22px;border-bottom:1px solid var(--line)}
+  .kb-head h3{font-size:1.15rem}
+  .kb-meta{font-size:.82rem;color:var(--muted);margin-top:4px}
+  .kb-body{padding:22px}
+  .kb-body h4{font-size:.95rem;margin:18px 0 6px}
+  .kb-body h4:first-child{margin-top:0}
+  .kb-body ol,.kb-body ul{padding-left:22px}
+  .kb-body li{margin-bottom:5px}
+  .note{background:var(--warn-soft);border-left:3px solid var(--warn);padding:10px 14px;border-radius:4px;font-size:.92rem;margin-top:10px}
+  .script{background:var(--accent-soft);padding:12px 14px;border-radius:6px;font-style:italic;font-size:.94rem}
+  /* tracker sample */
+  .tracker{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;margin-bottom:22px}
+  .tracker h3{font-size:1.15rem;margin-bottom:4px}
+  .table-wrap{overflow-x:auto;margin-top:14px}
+  table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:640px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:#f7f8fa}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+  .bar{height:8px;background:var(--accent-soft);border-radius:4px;margin-top:6px;overflow:hidden}
+  .bar i{display:block;height:100%;background:var(--accent)}
+  .pill{display:inline-block;font-size:.75rem;font-weight:600;padding:2px 8px;border-radius:10px;white-space:nowrap}
+  .pill.up{background:var(--bad-soft);color:var(--bad)}
+  .pill.flat{background:var(--warn-soft);color:var(--warn)}
+  .pill.down{background:var(--good-soft);color:var(--good)}
+  .fine{font-size:.82rem;color:var(--muted);margin-top:12px}
+  blockquote{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:26px;font-size:1.02rem}
+  blockquote p{margin-bottom:12px}
+  blockquote .q{font-family:"Source Serif 4",Georgia,serif;font-size:1.2rem;color:var(--accent)}
+  blockquote cite{display:block;font-style:normal;color:var(--muted);font-size:.92rem;margin-top:8px}
   .tags{display:flex;flex-wrap:wrap;gap:8px}
   .tags span{background:var(--surface);border:1px solid var(--line);padding:6px 12px;border-radius:20px;font-size:.9rem}
-  .edu p{margin-bottom:6px}
+  .edu p{margin-bottom:8px}
+  .contact a{color:var(--accent);font-weight:500}
   footer{text-align:center;color:var(--muted);font-size:.9rem;padding:32px 0}
-  @media (max-width:600px){header{padding:44px 0 40px}section{padding:36px 0}}
+  @media (max-width:600px){header{padding:44px 0 40px}section{padding:36px 0}.case,.kb-body,.tracker{padding:18px}}
 </style>
 </head>
 <body>
@@ -47,18 +91,37 @@
 <header>
   <div class="wrap">
     <h1>LaShonda Graham</h1>
-    <div class="role">Benefits Support &amp; Operations Professional</div>
-    <p class="lead">I help participants get clear, accurate answers about their benefits, and I help teams fix the processes behind the questions. My background combines plan support, payer and carrier coordination, compliance, and systems work in healthcare and regulated environments.</p>
+    <div class="role">Benefits Support &amp; Healthcare Operations Professional</div>
+    <p class="lead">I'm a benefits and healthcare operations professional with 13+ years across benefits support, behavioral health operations, and enterprise IT, backed by an M.S. in Business Analytics. At Willis Towers Watson, I resolve health &amp; welfare and pension inquiries by interpreting plan provisions and researching complex cases across multiple systems. I bring hands-on carrier and payer experience, including eligibility and benefits verification, authorizations, and enrollment with BCBS, UnitedHealthcare, Ambetter, and Medicaid. I'm known for spotting recurring issues and fixing them at the source, and for building the documentation and training that help teams get it right the first time.</p>
+    <div class="metrics">
+      <div class="metric"><b>80+ → ~20</b><span>open audit findings in 6 months</span></div>
+      <div class="metric"><b>5 payers</b><span>BCBS, UHC, Ambetter, Lucet, Medicaid</span></div>
+      <div class="metric"><b>20 staff</b><span>trained on new systems and procedures</span></div>
+      <div class="metric"><b>13+ years</b><span>healthcare, benefits, and IT operations</span></div>
+    </div>
     <div class="links">
+      <a href="LaShonda_Graham_Resume_WTW.pdf" target="_blank" rel="noopener">Download Resume</a>
       <a href="https://www.linkedin.com/in/lashondag" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
 </header>
 
+<nav aria-label="Sections">
+  <div class="wrap">
+    <a href="#strengths">Strengths</a>
+    <a href="#cases">Case Studies</a>
+    <a href="#samples">Work Samples</a>
+    <a href="#recommendation">Recommendation</a>
+    <a href="#tools">Tools</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
 <main class="wrap">
 
-  <section>
+  <section id="strengths">
     <h2>What I Bring to Benefits Support</h2>
+    <p class="sub">How my experience maps to Tier 2 plan and participant support.</p>
     <div class="grid">
       <div class="card">
         <h3>Plan Knowledge</h3>
@@ -73,12 +136,12 @@
         <p>Hands-on work with BCBS, UnitedHealthcare, Ambetter, Lucet, and Medicaid on enrollment, eligibility, and authorizations.</p>
       </div>
       <div class="card">
-        <h3>Trends &amp; Process Improvement</h3>
-        <p>Spot recurring issues, find the root cause, and turn it into better documentation, training, or workflow.</p>
+        <h3>Trends &amp; Root Cause</h3>
+        <p>Spot recurring issues, trace them to the source, and turn the fix into better documentation, training, or workflow.</p>
       </div>
       <div class="card">
         <h3>Knowledge Base &amp; Training</h3>
-        <p>Build procedures, training materials, and reference documents that help teams answer right the first time.</p>
+        <p>Write procedures, reference articles, and training that help teams answer right the first time.</p>
       </div>
       <div class="card">
         <h3>Confidentiality &amp; Compliance</h3>
@@ -87,73 +150,185 @@
     </div>
   </section>
 
-  <section>
-    <h2>Selected Work</h2>
+  <section id="cases">
+    <h2>Case Studies</h2>
+    <p class="sub">Real work, described without client data.</p>
 
     <div class="case">
-      <h3>Participant Benefits Support</h3>
-      <div class="where">Business Support Assistant, Customer Service Representative 1 | WTW</div>
-      <ul>
-        <li>Assist employees, retirees, and plan participants with benefits, eligibility, pension, enrollment, and life-event inquiries by phone, email, and chat.</li>
-        <li>Interpret plan provisions and procedures to give accurate guidance and resolve participant concerns.</li>
-        <li>Research complex issues across multiple systems, document findings, and coordinate resolution.</li>
-        <li>Identify recurring participant concerns and workflow issues that may need escalation or process clarification.</li>
-      </ul>
-    </div>
-
-    <div class="case">
-      <h3>Payer Coordination &amp; Benefits Verification</h3>
+      <h3>Finding the Pattern: Audit Turnaround</h3>
       <div class="where">Business Operations Manager | Freshly Renewed Transitional</div>
-      <ul>
-        <li>Performed and trained staff on insurance eligibility and benefits verification, prior authorizations, and continued stay authorizations.</li>
-        <li>Managed payer enrollment and recredentialing with Arkansas BCBS, Ambetter, UnitedHealthcare, Lucet, and Arkansas Medicaid, using CAQH, NPPES, PECOS, and Availity.</li>
-        <li>Reconciled billed versus paid claims with the outside billing specialist and researched billing issues to resolution.</li>
-      </ul>
+      <h4>The problem</h4>
+      <p>A behavioral health program had more than 80 open findings from state licensing, accreditation, and Medicaid and payer audits. They were tracked in different places, and the same issues kept coming back.</p>
+      <h4>What I did</h4>
+      <ol>
+        <li><strong>Centralized:</strong> pulled every finding into one tracker so the full picture was visible in one place.</li>
+        <li><strong>Prioritized:</strong> ranked findings by risk so the most serious were handled first.</li>
+        <li><strong>Found the root cause:</strong> grouped repeat findings and traced them to process gaps instead of fixing each one in isolation.</li>
+        <li><strong>Fixed it at the source:</strong> rewrote procedures, moved documentation and required training into the right systems, and assigned owners and due dates.</li>
+      </ol>
+      <h4>Result</h4>
+      <p>Open findings dropped from <span class="stat">80+ to about 20</span> in six months.</p>
+      <h4>Why it matters for benefits support</h4>
+      <p>It's the same skill as reviewing Tier 2 escalations: notice what keeps repeating, find out why, and recommend the change that stops it at first contact.</p>
     </div>
 
     <div class="case">
-      <h3>Reducing Audit Findings Through Process Fixes</h3>
+      <h3>Training Teams on a New System: Kipu EMR and Relias LMS</h3>
       <div class="where">Business Operations Manager | Freshly Renewed Transitional</div>
+      <h4>The problem</h4>
+      <p>Clinical documentation lived in a slow legacy system, and staff training was tracked by hand.</p>
+      <h4>What I did</h4>
       <ul>
-        <li>Cut audit findings from state licensing, accreditation, and payer audits from <span class="stat">80+ to about 20</span> in six months.</li>
-        <li>Traced recurring findings to their source, then updated procedures, documentation, and staff training to prevent repeats.</li>
-        <li>Built <span class="stat">5 KPI dashboards</span>, the organization's first executive reporting, tracking outcomes and trends.</li>
+        <li>Mapped current and future workflows and gathered requirements from clinical and administrative staff.</li>
+        <li>Cleaned the legacy data export so it could be imported accurately.</li>
+        <li>Ran <span class="stat">15 to 20 UAT scenarios</span> to confirm the system worked before launch.</li>
+        <li>Wrote role-based training and step-by-step reference guides, then trained <span class="stat">20 staff</span>.</li>
+        <li>Built a go-live checklist and ran chart audits after launch to catch problems early.</li>
       </ul>
-    </div>
-
-    <div class="case">
-      <h3>Systems Implementation &amp; Training</h3>
-      <div class="where">Business Operations Manager | Freshly Renewed Transitional</div>
-      <ul>
-        <li>Led a six-month Kipu EMR and Relias LMS implementation from business need through go-live and stabilization.</li>
-        <li>Cleaned and prepared legacy data for import, ran <span class="stat">15 to 20 UAT scenarios</span>, and trained <span class="stat">20 staff</span>.</li>
-        <li>Converted paper client intake to a HIPAA-compliant digital form and automated routine alerts, saving <span class="stat">3 to 5 staff hours per week</span>.</li>
-      </ul>
-    </div>
-
-    <div class="case">
-      <h3>Issue Resolution &amp; Data Validation</h3>
-      <div class="where">IT Analyst and Campaign Specialist | Vestcom (Avery Dennison)</div>
-      <ul>
-        <li>Determined whether client-reported issues came from client data or from code, using SQL queries and stored procedure debugging.</li>
-        <li>Ran 5 to 6 concurrent retail campaigns with about <span class="stat">95% on-time</span> activation, with a QA checkpoint that caught errors before launch.</li>
-      </ul>
+      <h4>Result</h4>
+      <p>On-time go-live approved by the Clinical Director, followed by a stable rollout.</p>
+      <h4>Why it matters for benefits support</h4>
+      <p>Clear reference material and training are what let a team give consistent answers. I build the documentation people actually use.</p>
     </div>
   </section>
 
-  <section>
+  <section id="samples">
+    <h2>Work Samples</h2>
+    <p class="sub">Samples I created to show how I work. All plan details, names, and figures are fictional.</p>
+
+    <div class="kb">
+      <div class="kb-head">
+        <span class="tag">Sample Knowledge Base Article</span>
+        <h3>Qualifying Life Event: Adding a Dependent Mid-Year</h3>
+        <div class="kb-meta">Audience: Tier 1 and Tier 2 specialists | Plan: Sample Company Health Plan | Fictional example</div>
+      </div>
+      <div class="kb-body">
+        <h4>When to use this article</h4>
+        <p>A participant calls to add a spouse or child to medical, dental, or vision coverage outside of annual enrollment because of a marriage, birth, or adoption.</p>
+
+        <h4>Steps</h4>
+        <ol>
+          <li>Verify the participant's identity using the standard authentication steps.</li>
+          <li>Confirm the event type and event date. The election window is <strong>31 days from the event date</strong> under this sample plan.</li>
+          <li>Confirm the event is still inside the window. If it is past 31 days, go to "Outside the window" below.</li>
+          <li>Walk the participant through the election online, or complete it on their behalf if they request it.</li>
+          <li>Explain the required documents and the due date (see below).</li>
+          <li>Tell the participant when coverage starts and when the new payroll deduction will appear.</li>
+          <li>Document the call in the case notes: event, event date, elections made, documents requested, and due date.</li>
+        </ol>
+
+        <h4>Required documents</h4>
+        <ul>
+          <li><strong>Marriage:</strong> marriage certificate</li>
+          <li><strong>Birth:</strong> birth certificate or hospital record of birth</li>
+          <li><strong>Adoption:</strong> adoption decree or placement papers</li>
+        </ul>
+
+        <h4>Coverage start date</h4>
+        <ul>
+          <li><strong>Birth or adoption:</strong> the date of the event</li>
+          <li><strong>Marriage:</strong> the first of the month after the election is made</li>
+        </ul>
+
+        <h4>Outside the window</h4>
+        <p>Do not promise an exception. Explain that the request is past the election window and offer to submit it for review. Escalate to Tier 2 with the event date and the reason for the delay.</p>
+
+        <h4>Suggested wording</h4>
+        <p class="script">"Congratulations! You have 31 days from the date of birth to add your baby, and coverage will go back to the date of birth. I can help you make that election right now."</p>
+
+        <div class="note"><strong>Common mistake:</strong> confusing the date the participant called with the event date. The window always starts from the event date.</div>
+      </div>
+    </div>
+
+    <div class="tracker">
+      <span class="tag">Sample Escalation Trend Report</span>
+      <h3>Tier 2 Escalations by Issue Type: Sample Quarter</h3>
+      <p class="sub" style="margin-bottom:0">Groups escalated cases by root cause so the team can see which fix would prevent the most escalations.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Issue type</th><th style="text-align:right">Cases</th><th>Trend vs. last quarter</th><th>Root cause</th><th>Recommended fix</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dependent added late (QLE timing)<div class="bar"><i style="width:100%"></i></div></td>
+              <td class="num">48</td>
+              <td><span class="pill up">Up 22%</span></td>
+              <td>Specialists counting the window from the call date, not the event date</td>
+              <td>Update the knowledge base article and add a "common mistake" callout; 10-minute team refresher</td>
+            </tr>
+            <tr>
+              <td>Pension estimate questions<div class="bar"><i style="width:73%"></i></div></td>
+              <td class="num">35</td>
+              <td><span class="pill flat">Flat</span></td>
+              <td>Participants can't find the estimate tool online</td>
+              <td>Add the tool's direct link and a short how-to to the call script</td>
+            </tr>
+            <tr>
+              <td>ID card not received<div class="bar"><i style="width:56%"></i></div></td>
+              <td class="num">27</td>
+              <td><span class="pill up">Up 15%</span></td>
+              <td>Carrier file sent before address updates processed</td>
+              <td>Raise the timing with the carrier contact and confirm the file schedule</td>
+            </tr>
+            <tr>
+              <td>Premium deduction mismatch<div class="bar"><i style="width:40%"></i></div></td>
+              <td class="num">19</td>
+              <td><span class="pill down">Down 10%</span></td>
+              <td>Coverage tier changed but payroll feed not updated</td>
+              <td>Add a check of the payroll feed to the tier-change procedure</td>
+            </tr>
+            <tr>
+              <td>Beneficiary update status<div class="bar"><i style="width:23%"></i></div></td>
+              <td class="num">11</td>
+              <td><span class="pill flat">Flat</span></td>
+              <td>No confirmation sent after the form is received</td>
+              <td>Recommend an automatic confirmation message</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fine">Fictional data for illustration. The top two fixes would address about 59% of escalations in this sample.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">Sample Dashboard</span>
+      <h3>Client Growth Dashboard (Google Sheets / Excel)</h3>
+      <p>A formula-driven tracker for a behavioral health practice's progress toward its enrollment goal, including session volume, referral source conversion, and a weekly status summary. Everything updates from a single input tab. Built with fictional data.</p>
+    </div>
+  </section>
+
+  <section id="recommendation">
+    <h2>Recommendation</h2>
+    <p class="sub">From my former direct manager.</p>
+    <blockquote>
+      <p>Tiara describes my strength as seeing where an organization needs more structure and then building practical systems, processes, and tools to provide it, and as turning complex compliance, business, and technology requirements into clear processes people can follow.</p>
+      <p class="q">"The fact that I continue to work with LaShonda is one of the strongest endorsements I can give of her work."</p>
+      <cite>Tiara Miller, LCSW | CEO, Inspire Therapeutic Services</cite>
+    </blockquote>
+  </section>
+
+  <section id="tools">
     <h2>Tools</h2>
-    <div class="tags">
-      <span>Microsoft Excel</span><span>Power BI</span><span>SQL Server</span><span>Microsoft Office Suite</span>
-      <span>Salesforce</span><span>Oracle CRM</span><span>Availity</span><span>CAQH</span><span>Kipu EMR</span>
-      <span>Relias LMS</span><span>Workfront</span><span>Trello</span><span>Process Documentation</span><span>Process Mapping</span>
+    <div class="tags" style="margin-top:16px">
+      <span>Microsoft Excel</span><span>Power BI</span><span>SQL Server</span><span>Microsoft 365</span>
+      <span>Salesforce</span><span>Oracle CRM</span><span>Availity</span><span>CAQH</span><span>NPPES</span><span>PECOS</span>
+      <span>Kipu EMR</span><span>Relias LMS</span><span>Google Sheets</span><span>Workfront</span><span>Trello</span>
+      <span>Process Documentation</span><span>Process Mapping</span>
     </div>
   </section>
 
   <section class="edu">
     <h2>Education</h2>
-    <p><strong>M.S. Applied Digital Technology, Business Analytics</strong><br>Arkansas State University</p>
+    <p style="margin-top:16px"><strong>M.S. Applied Digital Technology, Business Analytics</strong><br>Arkansas State University</p>
     <p><strong>B.B.A. Management Information Systems</strong><br>University of Arkansas at Little Rock</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p style="margin-top:12px">Email: <a href="mailto:lashondag01@gmail.com">lashondag01@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/lashondag" target="_blank" rel="noopener">linkedin.com/in/lashondag</a></p>
+    <p>Resume: <a href="LaShonda_Graham_Resume_WTW.pdf" target="_blank" rel="noopener">download PDF</a></p>
   </section>
 
 </main>
