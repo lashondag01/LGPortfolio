@@ -39,8 +39,6 @@
   .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
   .card h3{font-size:1.05rem;margin-bottom:8px;color:var(--accent)}
   .card p{color:var(--muted);font-size:.95rem}
-  .card a{color:var(--accent);text-decoration:none;font-weight:500}
-  .card a:hover{text-decoration:underline}
   .case{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:26px;margin-bottom:18px}
   .case h3{font-size:1.2rem;margin-bottom:4px}
   .case .where{color:var(--muted);font-size:.9rem;margin-bottom:14px}
@@ -61,6 +59,29 @@
   .kb-body li{margin-bottom:5px}
   .note{background:var(--warn-soft);border-left:3px solid var(--warn);padding:10px 14px;border-radius:4px;font-size:.92rem;margin-top:10px}
   .script{background:var(--accent-soft);padding:12px 14px;border-radius:6px;font-style:italic;font-size:.94rem}
+  /* dashboard sample */
+  .dashboard-sample{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:22px}
+  .dashboard-head{background:#1b3a52;color:#fff;padding:16px 22px;border-bottom:1px solid var(--line)}
+  .dashboard-head h3{font-size:1.15rem;margin-bottom:4px}
+  .dashboard-notice{background:var(--warn-soft);color:var(--warn);padding:12px 14px;font-size:.85rem;margin-bottom:14px}
+  .dashboard-body{padding:22px}
+  .metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-bottom:18px}
+  .metric-box{background:#f0f3f6;border:0.5px solid var(--line);border-radius:6px;padding:12px;text-align:center}
+  .metric-label{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+  .metric-value{font-size:1.8rem;font-weight:600;color:var(--accent);line-height:1.2}
+  .metric-subtext{font-size:.7rem;color:var(--muted);margin-top:4px}
+  .dashboard-section{margin-bottom:18px;border-bottom:1px solid var(--line);padding-bottom:14px}
+  .dashboard-section:last-child{border-bottom:none}
+  .section-title{font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin-bottom:10px}
+  .status-table{width:100%;font-size:.85rem;border-collapse:collapse}
+  .status-table th{background:#f0f3f6;padding:8px;text-align:left;font-weight:600;border-bottom:0.5px solid var(--line);font-size:.7rem}
+  .status-table td{padding:8px;border-bottom:0.5px solid var(--line)}
+  .status-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.7rem;font-weight:600}
+  .badge-good{background:var(--good-soft);color:var(--good)}
+  .badge-bad{background:var(--bad-soft);color:var(--bad)}
+  .notes-box{background:#f0f3f6;padding:12px;border-radius:6px;font-size:.85rem}
+  .note-item{margin-bottom:8px}
+  .note-label{font-weight:600;color:var(--accent);display:inline-block;width:80px}
   blockquote{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:26px;font-size:1.02rem}
   blockquote p{margin-bottom:12px}
   blockquote .q{font-family:"Source Serif 4",Georgia,serif;font-size:1.2rem;color:var(--accent)}
@@ -70,7 +91,7 @@
   .edu p{margin-bottom:8px}
   .contact a{color:var(--accent);font-weight:500}
   footer{text-align:center;color:var(--muted);font-size:.9rem;padding:32px 0}
-  @media (max-width:600px){header{padding:44px 0 40px}section{padding:36px 0}.case,.kb-body{padding:18px}}
+  @media (max-width:600px){header{padding:44px 0 40px}section{padding:36px 0}.case,.kb-body,.dashboard-body{padding:18px}.metric-grid{grid-template-columns:repeat(auto-fit,minmax(90px,1fr))}}
 </style>
 </head>
 <body>
@@ -227,11 +248,210 @@
       </div>
     </div>
 
-    <div class="card">
-      <span class="tag">Sample Dashboard</span>
-      <h3>Client Growth Dashboard</h3>
-      <p>Tracks a behavioral health practice's enrollment progress by session volume, referral source conversion, and capacity. Groups metrics by category so leadership can see which initiatives drive the most growth. <a href="samples/client-growth-dashboard.html" target="_blank">View the interactive sample →</a></p>
+    <div class="dashboard-sample">
+      <div class="dashboard-head">
+        <span class="tag">Sample Dashboard</span>
+        <h3>Client Growth Dashboard</h3>
+      </div>
+      <div class="dashboard-body">
+        <div class="dashboard-notice">Sample data: fictional numbers for portfolio demonstration only. Objective: grow active clients toward goal while averaging two sessions per client each month.</div>
+        
+        <div class="metric-grid">
+          <div class="metric-box">
+            <div class="metric-label">Active Clients</div>
+            <div class="metric-value">20</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-label">Client Goal</div>
+            <div class="metric-value">25</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-label">Client Gap</div>
+            <div class="metric-value">5</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-label">Goal Progress</div>
+            <div class="metric-value">80%</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-label">Report Month</div>
+            <div class="metric-value">Sep 26</div>
+          </div>
+        </div>
+
+        <div class="dashboard-section">
+          <div class="section-title">Session &amp; Revenue Tracking</div>
+          <div class="metric-grid">
+            <div class="metric-box">
+              <div class="metric-label">Completed Sessions MTD</div>
+              <div class="metric-value">30</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Monthly Session Goal</div>
+              <div class="metric-value">50</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Session Goal Progress</div>
+              <div class="metric-value">60%</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Collected Revenue MTD</div>
+              <div class="metric-value">$2,690</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Avg Revenue / Session</div>
+              <div class="metric-value">$89.67</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-section">
+          <div class="section-title">Weekly Status Snapshot</div>
+          <table class="status-table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Latest Week</th>
+                <th>Target</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Outreach Contacts</td>
+                <td>6</td>
+                <td>5</td>
+                <td><span class="status-badge badge-good">On Track</span></td>
+              </tr>
+              <tr>
+                <td>Therapy Inquiries</td>
+                <td>2</td>
+                <td>3</td>
+                <td><span class="status-badge badge-bad">Below Target</span></td>
+              </tr>
+              <tr>
+                <td>New Clients Started</td>
+                <td>1</td>
+                <td>1</td>
+                <td><span class="status-badge badge-good">On Track</span></td>
+              </tr>
+              <tr>
+                <td>Completed Sessions</td>
+                <td>8</td>
+                <td>12</td>
+                <td><span class="status-badge badge-bad">Below Target</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="dashboard-section">
+          <div class="section-title">Referral Source Performance (Report Month)</div>
+          <table class="status-table">
+            <thead>
+              <tr>
+                <th>Source</th>
+                <th>Inquiries</th>
+                <th>Started</th>
+                <th>Conversion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Medical Provider</td>
+                <td>3</td>
+                <td>2</td>
+                <td>67%</td>
+              </tr>
+              <tr>
+                <td>Community Organization</td>
+                <td>2</td>
+                <td>1</td>
+                <td>50%</td>
+              </tr>
+              <tr>
+                <td>Website</td>
+                <td>1</td>
+                <td>1</td>
+                <td>100%</td>
+              </tr>
+              <tr>
+                <td>Social Media</td>
+                <td>2</td>
+                <td>0</td>
+                <td>0%</td>
+              </tr>
+              <tr style="font-weight:600;background:#f0f3f6">
+                <td>Total</td>
+                <td>9</td>
+                <td>4</td>
+                <td>44%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="dashboard-section">
+          <div class="section-title">Status Update Notes</div>
+          <div class="notes-box">
+            <div class="note-item"><span class="note-label">What Changed</span> Two new medical provider referrals converted to intake this week.</div>
+            <div class="note-item"><span class="note-label">Major Blocker</span> Limited evening appointment slots are capping session volume.</div>
+            <div class="note-item"><span class="note-label">Decision Needed</span> Approve adding two evening clinic blocks starting next month.</div>
+            <div class="note-item"><span class="note-label">Top Next Step</span> Send referral partner update to top three medical providers.</div>
+            <div class="note-item"><span class="note-label">Owner / Due Date</span> Operations lead, Friday</div>
+          </div>
+        </div>
+
+        <div class="dashboard-section">
+          <div class="section-title">Monthly Comparison</div>
+          <div class="metric-grid">
+            <div class="metric-box">
+              <div class="metric-label">Aug 2026 Sessions</div>
+              <div class="metric-value">41</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Aug 2026 Revenue</div>
+              <div class="metric-value">$3,650</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Sep 2026 Sessions MTD</div>
+              <div class="metric-value">30</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Sep 2026 Revenue MTD</div>
+              <div class="metric-value">$2,690</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-section">
+          <div class="section-title">Growth Since Program Start</div>
+          <div class="metric-grid">
+            <div class="metric-box">
+              <div class="metric-label">Program Start</div>
+              <div class="metric-value">Apr 26</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Baseline Active Clients</div>
+              <div class="metric-value">8</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Net Active Growth</div>
+              <div class="metric-value">12</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Current Active Clients</div>
+              <div class="metric-value">20</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Growth Rate</div>
+              <div class="metric-value">150%</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
   </section>
 
   <section id="recommendation">
