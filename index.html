@@ -61,21 +61,6 @@
   .kb-body li{margin-bottom:5px}
   .note{background:var(--warn-soft);border-left:3px solid var(--warn);padding:10px 14px;border-radius:4px;font-size:.92rem;margin-top:10px}
   .script{background:var(--accent-soft);padding:12px 14px;border-radius:6px;font-style:italic;font-size:.94rem}
-  /* tracker sample */
-  .tracker{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;margin-bottom:22px}
-  .tracker h3{font-size:1.15rem;margin-bottom:4px}
-  .table-wrap{overflow-x:auto;margin-top:14px}
-  table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:640px}
-  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-  th{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:#f7f8fa}
-  td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
-  .bar{height:8px;background:var(--accent-soft);border-radius:4px;margin-top:6px;overflow:hidden}
-  .bar i{display:block;height:100%;background:var(--accent)}
-  .pill{display:inline-block;font-size:.75rem;font-weight:600;padding:2px 8px;border-radius:10px;white-space:nowrap}
-  .pill.up{background:var(--bad-soft);color:var(--bad)}
-  .pill.flat{background:var(--warn-soft);color:var(--warn)}
-  .pill.down{background:var(--good-soft);color:var(--good)}
-  .fine{font-size:.82rem;color:var(--muted);margin-top:12px}
   blockquote{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:26px;font-size:1.02rem}
   blockquote p{margin-bottom:12px}
   blockquote .q{font-family:"Source Serif 4",Georgia,serif;font-size:1.2rem;color:var(--accent)}
@@ -85,7 +70,7 @@
   .edu p{margin-bottom:8px}
   .contact a{color:var(--accent);font-weight:500}
   footer{text-align:center;color:var(--muted);font-size:.9rem;padding:32px 0}
-  @media (max-width:600px){header{padding:44px 0 40px}section{padding:36px 0}.case,.kb-body,.tracker{padding:18px}}
+  @media (max-width:600px){header{padding:44px 0 40px}section{padding:36px 0}.case,.kb-body{padding:18px}}
 </style>
 </head>
 <body>
@@ -242,61 +227,10 @@
       </div>
     </div>
 
-    <div class="tracker">
-      <span class="tag">Sample Escalation Trend Report</span>
-      <h3>Tier 2 Escalations by Issue Type: Sample Quarter</h3>
-      <p class="sub" style="margin-bottom:0">Groups escalated cases by root cause so the team can see which fix would prevent the most escalations.</p>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th>Issue type</th><th style="text-align:right">Cases</th><th>Trend vs. last quarter</th><th>Root cause</th><th>Recommended fix</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Dependent added late (QLE timing)<div class="bar"><i style="width:100%"></i></div></td>
-              <td class="num">48</td>
-              <td><span class="pill up">Up 22%</span></td>
-              <td>Specialists counting the window from the call date, not the event date</td>
-              <td>Update the knowledge base article and add a "common mistake" callout; 10-minute team refresher</td>
-            </tr>
-            <tr>
-              <td>Pension estimate questions<div class="bar"><i style="width:73%"></i></div></td>
-              <td class="num">35</td>
-              <td><span class="pill flat">Flat</span></td>
-              <td>Participants can't find the estimate tool online</td>
-              <td>Add the tool's direct link and a short how-to to the call script</td>
-            </tr>
-            <tr>
-              <td>ID card not received<div class="bar"><i style="width:56%"></i></div></td>
-              <td class="num">27</td>
-              <td><span class="pill up">Up 15%</span></td>
-              <td>Carrier file sent before address updates processed</td>
-              <td>Raise the timing with the carrier contact and confirm the file schedule</td>
-            </tr>
-            <tr>
-              <td>Premium deduction mismatch<div class="bar"><i style="width:40%"></i></div></td>
-              <td class="num">19</td>
-              <td><span class="pill down">Down 10%</span></td>
-              <td>Coverage tier changed but payroll feed not updated</td>
-              <td>Add a check of the payroll feed to the tier-change procedure</td>
-            </tr>
-            <tr>
-              <td>Beneficiary update status<div class="bar"><i style="width:23%"></i></div></td>
-              <td class="num">11</td>
-              <td><span class="pill flat">Flat</span></td>
-              <td>No confirmation sent after the form is received</td>
-              <td>Recommend an automatic confirmation message</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="fine">Fictional data for illustration. The top two fixes would address about 59% of escalations in this sample.</p>
-    </div>
-
     <div class="card">
       <span class="tag">Sample Dashboard</span>
       <h3>Client Growth Dashboard</h3>
-      <p>A formula-driven tracker for a behavioral health practice's progress toward its enrollment goal, including session volume, referral source conversion, and a weekly status summary. <a href="samples/client-growth-dashboard.html" target="_blank">View the interactive sample →</a></p>
+      <p>Tracks a behavioral health practice's enrollment progress by session volume, referral source conversion, and capacity. Groups metrics by category so leadership can see which initiatives drive the most growth. <a href="samples/client-growth-dashboard.html" target="_blank">View the interactive sample →</a></p>
     </div>
   </section>
 
